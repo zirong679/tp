@@ -438,7 +438,8 @@ Format: `task add EMPLOYEE_INDEX d/DETAILS`
 * `EMPLOYEE_INDEX` refers to the employee's index in the currently displayed
   employee list and must be a positive integer.
 * `DETAILS` must not be empty, and it must not exceed 120 characters.
-* To avoid conflict with flags, replace `/` with `\/` in task description.
+* Prefix-like text that is not escaped, such as `s/5000`, is rejected. To use it as part of a task description,
+  replace `/` with `\/`, for example `s\/5000`.
 * A task that already exists for the employee cannot be added again.
   Task comparisons ignore leading/trailing whitespace, repeated whitespace,
   and capitalization. For example, `Prepare report` and `  prepare   REPORT  `
